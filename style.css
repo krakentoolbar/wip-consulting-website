@@ -1,0 +1,687 @@
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Surgical Grid Background - More Transparent */
+.surgical-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Glassmorphism Header */
+.glass-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo-section {
+    background: transparent !important;
+}
+
+/* CSS NUKE - Eliminate ALL White Boxes */
+.nav-logo, .logo-container, .logo-section, header img, footer img, 
+.brand-logo-quiet, .footer-logo-quiet {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Quiet Luxury Logo - Transparent Integration */
+.brand-logo-quiet {
+    height: 40px;
+    width: auto;
+    opacity: 0.95;
+    background: transparent !important;
+    transition: opacity 0.3s ease;
+    filter: invert(1) brightness(2);
+}
+
+.brand-logo-quiet:hover {
+    opacity: 1;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #00ff88;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #00ff88;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero Command Center - Pure Black */
+.hero-command {
+    padding: 150px 0 100px;
+    text-align: center;
+    background: #0a0a0a;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #00ff88 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleFloat 6s ease-in-out infinite;
+}
+
+@keyframes titleFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-3px); }
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #cccccc;
+}
+
+.hero-tagline {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #888888;
+}
+
+.accent-text {
+    color: #00ff88;
+    font-weight: 700;
+}
+
+/* Quiet Luxury Pulsing - Subtle & Refined */
+.pulsing-metric-quiet {
+    animation: pulseQuiet 4s ease-in-out infinite;
+    font-size: 1.2em;
+    font-weight: 800;
+}
+
+@keyframes pulseQuiet {
+    0%, 100% { 
+        opacity: 0.8;
+    }
+    50% { 
+        opacity: 1.0;
+    }
+}
+
+/* Quiet Luxury CTA Button - Minimal & Sophisticated */
+.cta-quiet {
+    display: inline-block;
+    background: transparent;
+    color: #ffffff;
+    padding: 18px 40px;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.cta-quiet:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-1px);
+}
+
+/* Brands Managed Section - Subtle Color Transition */
+.wall-of-giants {
+    padding: 80px 0;
+    background: #0b0b0b;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 60px;
+    color: #ffffff;
+}
+
+.giants-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Minimal Surgical Badges - Clean & Refined */
+.surgical-badge-minimal {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 25px 20px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    color: #888888;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.surgical-badge-minimal:hover {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+}
+
+/* Results Strip - Subtle Dark Navy */
+.results-strip {
+    padding: 60px 0;
+    background: #0c0c0c;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.result-metric {
+    padding: 20px;
+}
+
+.metric-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #00ff88;
+    margin-bottom: 10px;
+    text-shadow: none;
+    animation: none;
+}
+
+.metric-label {
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 5px;
+}
+
+.metric-context {
+    font-size: 0.85rem;
+    color: #888888;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Insider Verification Section - Pure Black */
+.insider-verification {
+    padding: 100px 0;
+    background: #0a0a0a;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.endorsements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.endorsement-card-quiet {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 40px;
+    transition: all 0.3s ease;
+}
+
+.endorsement-card-quiet:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.verified-badge {
+    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+    color: #000000;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.quote {
+    font-size: 1.1rem;
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.endorser {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+.endorser-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #00ff88;
+    margin-bottom: 5px;
+}
+
+.endorser-title {
+    font-size: 0.9rem;
+    color: #cccccc;
+    font-weight: 500;
+}
+
+/* 1P Architecture Pillars - Almost Imperceptible Transition */
+.pillars-section {
+    padding: 100px 0;
+    background: #0b0b0b;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+
+/* Ultra-Subtle Grid for Pillars */
+.pillars-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.pillars-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.pillar-card-quiet {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 40px;
+    position: relative;
+}
+
+/* Quiet Interactive Lift - Minimal Movement */
+.interactive-lift-quiet {
+    transition: all 0.3s ease;
+}
+
+.interactive-lift-quiet:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.pillar-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.pillar-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.pillar-description {
+    color: #cccccc;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.result-cards {
+    display: grid;
+    gap: 15px;
+}
+
+.result-card-quiet {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.result-card-quiet:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(2px);
+}
+
+.result-title {
+    font-size: 0.9rem;
+    color: #cccccc;
+}
+
+.result-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #00ff88;
+}
+
+/* Experience Section - Pure Black */
+.experience-section {
+    padding: 80px 0;
+    background: #0a0a0a;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.intelligence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.intel-card-quiet {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.intel-card-quiet:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+.intel-card-quiet h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #00ff88;
+}
+
+.intel-card-quiet p {
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+/* Results Section - Subtle Navy */
+.results-section {
+    padding: 80px 0;
+    background: #0c0c0c;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mission-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.stat-group {
+    text-align: left;
+}
+
+.stat-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00ff88;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.stat-items {
+    display: grid;
+    gap: 15px;
+}
+
+.stat-item-quiet {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    padding: 20px;
+    color: #ffffff;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.stat-item-quiet:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(3px);
+}
+
+/* Footer */
+.command-footer {
+    background: #000000;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: transparent !important;
+}
+
+.footer-logo-quiet {
+    height: 40px;
+    width: auto;
+    opacity: 0.95;
+    background: transparent !important;
+    transition: opacity 0.3s ease;
+    filter: invert(1) brightness(2);
+}
+
+.footer-logo-quiet:hover {
+    opacity: 1;
+}
+
+.footer-brand p {
+    color: #cccccc;
+    font-weight: 500;
+}
+
+.footer-button-quiet {
+    background: transparent;
+    color: #ffffff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.footer-button-quiet:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-1px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #666666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .giants-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .endorsements-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .mission-stats {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .metric-number {
+        font-size: 2.5rem;
+    }
+    
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .giants-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .pillar-card-quiet {
+        padding: 30px 20px;
+    }
+    
+    .endorsement-card-quiet {
+        padding: 30px 20px;
+    }
+}
