@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base ─── */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-feature-settings: "rlig" 1, "calt" 1;
+  overflow-x: hidden;
+}
+
+/* ─── Service Cards ─── */
+.service-card {
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  transition: all 0.3s ease;
+}
+.service-card:hover {
+  border-color: rgba(245, 158, 11, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  transform: translateY(-3px);
+}
+
+/* ─── Brand Marquee ─── */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 55s linear infinite;
+  align-items: center;
+  gap: 40px;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Flywheel rotating track ─── */
+@keyframes flywheel-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.flywheel-track-group {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: flywheel-spin 18s linear infinite;
+}
